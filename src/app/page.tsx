@@ -16,13 +16,22 @@ const Home: NextPage = () => {
 
       <main className="bg-gray-100">
         {/* Hero Section */}
-        <section className="relative flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background.jpg)' }}>
+        <section className="relative flex items-center justify-center h-screen overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+          >
+            <source src="/background.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 text-center text-white">
             <h1 className="text-5xl font-bold">Welcome to Our Product</h1>
             <p className="mt-4 text-xl">Innovate, Improve, Inspire</p>
-            <Link href="/signup">
-
+            <Link href="/signup" className="inline-block px-8 py-4 mt-8 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700">
+              Get Started
             </Link>
           </div>
         </section>
